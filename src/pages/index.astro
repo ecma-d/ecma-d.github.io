@@ -1,4 +1,6 @@
 ---
+import AnnouncementBar from "../components/AnnouncementBar.astro";
+
 const site = {
   "title": "ECMA-D",
   "description": "ECMA-D is a runtime-neutral daemon and tooling architecture for Node, Bun, and Deno with schema-governed interfaces and Tier 1 Rust, TypeScript, and Dart support.",
@@ -84,6 +86,13 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://ecma-d.gith
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <AnnouncementBar
+      storageKey="site-announcement:ecma-d:v1"
+      message="Happy 2026, y’all!"
+      href="https://github.com/ecma-d"
+      linkLabel="See what we’re building"
+      tone="gold"
+    />
     <main
       id="main"
       class:list={["site", `layout-${site.layout}`, `tone-${site.tone}`]}
