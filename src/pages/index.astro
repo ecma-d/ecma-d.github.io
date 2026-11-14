@@ -106,6 +106,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://ecma-d.gith
         <nav class="desktop-nav" aria-label="Primary navigation">
           <a href="#principles">Principles</a>
           <a href="#method">Method</a>
+          <a href="#protocol">Protocol</a>
           <a href={`https://github.com/${site.org}`}>GitHub <span aria-hidden="true">↗</span></a>
                   <a href="#access">Access</a>
           <a href="https://user.ecma-d.github.io/">Log in</a>
@@ -116,6 +117,7 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://ecma-d.gith
           <nav aria-label="Mobile navigation">
             <a href="#principles">Principles</a>
             <a href="#method">Method</a>
+            <a href="#protocol">Protocol</a>
             <a href="#access">Access</a>
             <a href="https://user.ecma-d.github.io/">Log in</a>
             <a href="https://org.ecma-d.github.io/">Organization access</a>
@@ -194,9 +196,30 @@ const canonical = new URL(Astro.url.pathname, Astro.site ?? "https://ecma-d.gith
         </ol>
       </section>
 
+      <section class="method" id="protocol" aria-labelledby="protocol-title">
+        <div class="section-heading">
+          <p class="section-number">03 / PROTOCOL</p>
+          <h2 id="protocol-title">Discover capabilities before using a transport.</h2>
+        </div>
+        <ol>
+          <li>
+            <span>01</span>
+            <div><h3>Read the descriptor</h3><p>The API's anonymous <code>GET /v1/protocol</code> endpoint describes the versioned transport contract without a bearer credential.</p></div>
+          </li>
+          <li>
+            <span>02</span>
+            <div><h3>Check compatibility</h3><p>Clients must validate the protocol version and supported transport identifiers. Unknown versions or transports fail closed.</p></div>
+          </li>
+          <li>
+            <span>03</span>
+            <div><h3>Authenticate operations</h3><p>Discovery is not authorization. Reads and durable operations still enforce their own Shared Auth and product-scoped access checks.</p></div>
+          </li>
+        </ol>
+      </section>
+
       <section class="access" id="access" aria-labelledby="access-title">
         <div class="section-heading">
-          <p class="section-number">03 / ACCESS</p>
+          <p class="section-number">04 / ACCESS</p>
           <h2 id="access-title">One product. Clear account boundaries.</h2>
         </div>
         <div class="access-grid">
